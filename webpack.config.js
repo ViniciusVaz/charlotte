@@ -39,7 +39,9 @@ module.exports = {
         alias: {
             _components: path.resolve(__dirname, "src/assets/components"),
             _img: path.resolve(__dirname, "src/assets/images"),
-            _scss: path.resolve(__dirname, "src/assets/styles")
+            _scss: path.resolve(__dirname, "src/assets/styles"),
+            _service: path.resolve(__dirname, "src/assets/service"),
+            _vuex: path.resolve(__dirname, "src/assets/vuex")
         }
     },
     plugins: [

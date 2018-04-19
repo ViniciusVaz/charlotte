@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ViniciusVaz/charlotte#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "moment": "^2.22.1",
     "v-calendar": "^0.9.7",
     "vue": "^2.5.16",

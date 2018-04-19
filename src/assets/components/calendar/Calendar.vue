@@ -13,7 +13,7 @@
                     <span class="details__check-out__date" v-if="date">{{ formatedEndDate }}</span>
                     <span class="details__check-out__date" v-else>Choose a date</span>
                 </div>
-                <div class="details__button">
+                <div class="details__button" @click="getRooms()">
                     Search hotels
                 </div>
             </div>
@@ -35,6 +35,7 @@
     </div>
 </template>
 <script>
+    import { mapActions } from 'vuex'
     import moment from 'moment'
     
     export default {
@@ -81,7 +82,12 @@
 			formatedEndDate () {
 				return moment(this.date.end).format('MMMM D, YYYY')
 			}
-		},
+        },
+        methods: {
+            ...mapActions([
+                'getRooms'
+            ])
+        }
     }
 </script>
 <style lang="scss" scoped>
