@@ -11,10 +11,13 @@
                 <span class="header__container__logo__description header__container__logo__description--title">Charlotte</span>
                 <span class="header__container__logo__description">The Queen City</span>
             </div>
+            <Calendar />
         </div>
     </div>
 </template>
 <script>
+    import Calendar from "_components/calendar/Calendar.vue"
+
     export default {
         data() {
             return {
@@ -24,10 +27,14 @@
                     { label: "Guide", url: "" }
                 ]
             }
+        },
+        components: {
+            Calendar
         }
     }
 </script>
 <style lang="scss" scoped>
+
     @mixin underline {
         content: '';
         width: 100%;
