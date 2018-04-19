@@ -1,10 +1,14 @@
 <template>
-    <h1>Vue component</h1>
+    <div>
+        <Header />  
+    </div>
 </template>
 <script>
+    import Header from "_components/header/Header.vue"
+
     export default {
-        ready() {
-            console.log("Component vue")
+        components: {
+            Header
         }
     }
 </script>
