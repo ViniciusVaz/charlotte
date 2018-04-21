@@ -3,8 +3,8 @@
         <div class="room__image">
             <img :src="room.image" alt="image room">
         </div>
-        <div class="room__info">
-            <div class="room__info__details" v-if="showInfo">
+        <div class="room__info" v-if="showInfo">
+            <div class="room__info__details" >
                 <div class="room__info__details__rate">
                     <template v-for="(item, i) in room.rate">
                         <img :key="i" src="~_img/star-filled.svg"/>
@@ -17,22 +17,35 @@
                     <div class="button__item button__item--price-history" @click="showInfo = false">Price history</div>
                 </div>
             </div>
-            <div class="room__info__value" v-if="showInfo">
+            <div class="room__info__value">
                 <p class="room__info__value__nights">Total <span>8 nights</span></p>
                 <span class="room__info__value__price-total">${{ room.price }}</span>
                 <span class="room__info__value__per-night">Per night</span>
                 <span class="room__info__value__price-night">${{ room.price }}</span>
             </div>
         </div>
+        <div class="room__chart" v-if="!showInfo">
+            <div class="room__chart__info">
+                <p class="room__chart__info__title">Price history for 2017</p>
+                <a class="room__chart__info__back" @click="showInfo = true">
+                    <img src="~_img/back-description.svg" alt="Back to informations">
+                    <p>Back to description</p>
+                </a>
+            </div>
+            <div class="room__chart__graphic">
+                <RoomChart :dataCollection="dataCollection"/>
+            </div>
+        </div>
     </div>
 </template>
 <script>
-    import { mapState, mapActions } from "vuex"
+    import { mapState } from "vuex"
+    import RoomChart from "_components/room/RoomChart.vue"
 
     export default {
         data() {
             return {
-                showInfo: true
+                showInfo: true,
             }
         },
         props: {
@@ -44,12 +57,27 @@
         computed: {
             ...mapState ([
                 "app"
-            ])
+            ]),
+            dataCollection() {
+                const chart = {
+                    labels: [],
+                    datasets: [{
+                        backgroundColor: [],
+                        data: []
+                    }]
+                }
+
+                this.room.price_history.map((item, i) => {
+                    chart.labels.push(item.month)
+                    chart.datasets[0].data.push(item.value)
+                    chart.datasets[0].backgroundColor.push("rgba(238,111,72,100)")
+                })
+
+                return chart
+            }
         },
-        methods: {
-            ...mapActions([
-                "setHistoric"
-            ])
+        components: {
+            RoomChart
         }
     }
 </script>
@@ -77,7 +105,7 @@
 
         &__info {
             display: flex;
-            width: 100%;
+            max-height: 238px;
             margin-left: 208px;
 
             &__details {
@@ -188,6 +216,52 @@
                 }
             }
 
+        }
+
+        &__chart {
+            font-family: "Montserrat", sans-serif;
+            width: 100%;
+            max-height: 238px;
+            margin-left: 208px;
+
+            &__graphic {
+                position: relative;
+
+                > div {
+                    height: 185px;
+                }
+            }
+
+            &__info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 40px;
+
+                &__title {
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: #F98100;
+                    text-transform: uppercase;
+                    letter-spacing: 1.82px;
+                }
+
+                &__back {
+                    display: flex;
+                    font-size: 12px;
+                    color: #555555;
+                    letter-spacing: 1.2px;
+
+                    > img {
+                        width: 25px;
+                        height: 20px;
+                    }
+
+                    > p {
+                        padding-left: 20px;
+                    }
+                }
+            }
         }
     }
 </style>

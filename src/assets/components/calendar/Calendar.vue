@@ -13,7 +13,7 @@
                     <span class="details__check-out__date" v-if="date">{{ formatedEndDate }}</span>
                     <span class="details__check-out__date" v-else>Choose a date</span>
                 </div>
-                <div class="details__button" @click="getRooms()">
+                <div class="details__button" @click="searchRooms()">
                     Search hotels
                 </div>
             </div>
@@ -96,6 +96,11 @@
 			}
         },
         methods: {
+            searchRooms() {
+                if(this.date !== null) {
+                    this.getRooms()
+                }
+            },
             ...mapActions([
                 'getRooms',
                 'setFilter'

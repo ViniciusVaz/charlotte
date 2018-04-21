@@ -23,9 +23,11 @@
   "homepage": "https://github.com/ViniciusVaz/charlotte#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "chart.js": "^2.7.2",
     "moment": "^2.22.1",
     "v-calendar": "^0.9.7",
     "vue": "^2.5.16",
+    "vue-chartjs": "^3.3.0",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
