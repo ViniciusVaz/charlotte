@@ -77,15 +77,28 @@
         },
 		computed: {
 			formatedStartDate () {
-				return moment(this.date.start).format('MMMM D, YYYY')
+                const date = {
+                    label: "startDate",
+                    value: moment(this.date.start).format('MMMM D, YYYY')
+                }
+                this.setFilter(date)
+
+                return date.value
 			},
 			formatedEndDate () {
-				return moment(this.date.end).format('MMMM D, YYYY')
+                const date = {
+                    label: "endDate",
+                    value: moment(this.date.end).format('MMMM D, YYYY')
+                }
+                this.setFilter(date)
+
+                return date.value
 			}
         },
         methods: {
             ...mapActions([
-                'getRooms'
+                'getRooms',
+                'setFilter'
             ])
         }
     }

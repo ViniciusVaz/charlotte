@@ -1,15 +1,16 @@
 <template>
     <div class="header">
-        <div class="header__container">
-            <ul class="header__container__menu">
-                <li class="header__container__menu__item" v-for="(item, index) in menu" :key="index">
+        <div class="header__background"></div>
+        <div class="header__content">
+            <ul class="header__content__menu">
+                <li class="header__content__menu__item" v-for="(item, index) in menu" :key="index">
                     <a :href="item.url">{{item.label}}</a>
                 </li>
             </ul>
-            <div class="header__container__logo">  
-                <span class="header__container__logo__description">Welcome To</span>
-                <span class="header__container__logo__description header__container__logo__description--title">Charlotte</span>
-                <span class="header__container__logo__description">The Queen City</span>
+            <div class="header__content__logo">  
+                <span class="header__content__logo__description">Welcome To</span>
+                <span class="header__content__logo__description header__content__logo__description--title">Charlotte</span>
+                <span class="header__content__logo__description">The Queen City</span>
             </div>
             <Calendar />
         </div>
@@ -44,13 +45,20 @@
     }
 
     .header {
-        background-image: url('~_img/hero.jpg');
-        background-position: top center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 600px;
+        &__background { 
+            background-image: url('~_img/hero.jpg');
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 90vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
 
-        &__container {
+        &__content {
             padding: 0 50px;
 
             &__menu {
