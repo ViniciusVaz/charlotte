@@ -1,9 +1,9 @@
 <template>
-    <div class="grid-wrapper" v-if="rooms.rooms.length > 0">
+    <div class="grid-wrapper" >
         <h3>Best choices between {{filters.startDate}} and {{filters.endDate}}</h3>
         <div class="grid-wrapper__content">
             <div class="grid-wrapper__content__filter">
-                <Filter />
+                <FilterRoom />
             </div>
             <div class="grid-wrapper__content__room">
                 <template v-for="(room, i) in rooms.rooms">
@@ -16,6 +16,7 @@
 <script>
     import { mapState } from "vuex"
     import Room from "./Room.vue"
+    import FilterRoom from "./FilterRoom.vue"
 
     export default {
         computed: {
@@ -25,25 +26,29 @@
             ])
         },
         components: {
-            Room
+            Room,
+            FilterRoom
         }
     }
 </script>
 <style lang="scss" scoped>
     .grid-wrapper {
-        text-align: center;
-        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;    
 
         &__content {
             display: flex;
 
             &__filter {
-                width: 20%;
-                height: 700px;
+                margin-top: 70px;
+                width: 310px;
             }
 
             &__room {
                 margin-top: 70px;
+                margin-left: 100px;
             }
         }
     }
