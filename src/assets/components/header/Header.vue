@@ -51,7 +51,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
-            height: 90vh;
+            height: 650px;
             position: absolute;
             top: 0;
             left: 0;

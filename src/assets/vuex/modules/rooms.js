@@ -3,7 +3,7 @@ import service from "_service/rooms"
 
 export default {
     state: {
-        rooms: []
+        rooms: null
     },
     mutations: {
         [SET_ROOMS] (state, data) {

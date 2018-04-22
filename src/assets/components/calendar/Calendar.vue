@@ -115,7 +115,11 @@
         background-color: #fff;
         margin: 100px auto 0;
         padding-top: 65px;
-        box-shadow: 0px -41px 156px -51px rgba(0,0,0,0.75);
+        box-shadow: 0px -51px 156px -51px rgba(0,0,0,0.75);
+
+        @media screen and (max-width: 992px) {
+            width: initial;
+        }
 
         > h4 {
             text-align: center;
@@ -126,6 +130,11 @@
         &__content {
             display: flex;
             margin-top: 70px;
+
+            @media screen and (max-width: 992px) {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
 
             .details {
                 font-family: "Heebo";

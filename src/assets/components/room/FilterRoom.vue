@@ -1,6 +1,9 @@
 <template>
-    <div class="filter">
-        <span class="filter__title">Filters</span>
+    <div class="filter" :class="{'filter--active': app.menu}">
+        <div class="filter__header">
+            <span class="filter__header__title">Filters</span>
+            <span class="filter__header__close" @click="toogleMenu()"></span>
+        </div>
         <div class="filter__content">
             <div class="filter__content__price-range price-range">
                 <span class="price-range__title">Price Range per night</span>
@@ -85,7 +88,8 @@
         },
         computed: {
             ...mapState([
-                "filters"
+                "filters",
+                "app"
             ])
         },
         watch: {
@@ -105,7 +109,8 @@
         methods: {
             ...mapActions([
                 "getRooms",
-                "setFilter"
+                "setFilter",
+                "toogleMenu"
             ]),
             setRating(item) {
                 let data = ""
@@ -142,10 +147,52 @@
     .filter {
         font-family: "Montserrat";
 
-        &__title {
-            display: block;
-            font-size: 22px;
+        @media screen and (max-width: 1200px) {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            opacity: 0;
+            width: 365px;
+            height: 100%;
+            z-index: 10;
+            transition: all .4s ease;
+        }
+
+        &--active { 
+            @media screen and (max-width: 1200px) {
+                left: 0;
+                opacity: 1;
+                background-color: #fff;
+                box-shadow: 9px 6px 46px -10px rgba(0, 0, 0, 0.75);
+                padding: 20px 20px 20px 25px;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        &__header {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 30px;
+
+            &__title {
+                display: block;
+                font-size: 22px;
+            }
+
+            &__close {
+                @media screen and (max-width: 1200px){
+                    background-image: url("~_img/close.svg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 35px;
+                    height: 35px;
+                }
+            }
         }
 
         &__content {

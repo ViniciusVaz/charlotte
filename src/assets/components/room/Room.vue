@@ -86,17 +86,25 @@
         position: relative;
         display: flex;
         box-shadow: 0px 0 46px -10px rgba(0, 0, 0, 0.75);
-        width: 900px;
         border-radius: 10px;
         padding: 35px 35px 35px 0;
         margin-bottom: 40px;
         min-height: 308px;
+
+        @media screen and (max-width: 1200px) {
+            margin: 0 15px 40px 75px;
+        }
 
         &__image {
             position: absolute;
             left: -60px;
             width: 238px;
             height: 238px;
+
+            @media screen and (max-width: 992px) {
+                width: 150px;
+                height: 150px;
+            }
 
             > img {
                 border-radius: 5px;
@@ -107,6 +115,11 @@
             display: flex;
             max-height: 238px;
             margin-left: 208px;
+
+            @media screen and (max-width: 992px) {
+                max-height: initial;
+                margin-left: 108px;
+            }
 
             &__details {
                 font-family: "Heebo";
@@ -184,6 +197,10 @@
                 padding-left: 20px;
                 font-family: "Montserrat";
 
+                @media screen and (max-width: 992px) {
+                    padding-right: 10px;
+                }
+
                 &__nights {
                     font-size: 16px;
                     font-weight: 300;
@@ -223,6 +240,10 @@
             width: 100%;
             max-height: 238px;
             margin-left: 208px;
+
+            @media screen and (max-width: 992px) {
+                margin-left: 108px;
+            }
 
             &__graphic {
                 position: relative;
