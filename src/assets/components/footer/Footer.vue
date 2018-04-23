@@ -3,7 +3,7 @@
         <div class="footer__social">
             <template v-for="(item, i) in social">
                 <div  :key="i" class="footer__social__item" :class="`footer__social__item--${item.slug}`">
-                    <a :href="item.link" :alt="item.slug" :title="item.slug"><img :src="item.img"/></a>
+                    <a :href="item.link" :alt="item.slug" :title="item.slug"><img :src="item.img" :alt="item.slug"/></a>
                 </div>
             </template>
         </div>
