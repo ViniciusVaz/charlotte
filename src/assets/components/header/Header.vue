@@ -61,6 +61,10 @@
         &__content {
             padding: 0 50px;
 
+            @media screen and (max-width: 768px) {
+                padding: 0 15px;
+            }
+
             &__menu {
                 display: flex;
                 padding-top: 35px;
@@ -69,6 +73,11 @@
                     font-family: "Heebo";
                     font-size: 15px;
                     padding-right: 26px;
+
+                    @media screen and (max-width: 425px) {
+                        justify-content: space-between;
+                        text-align: center;
+                    }
 
                     > a {
                         color: #fff;
@@ -88,6 +97,10 @@
                 color: #fff;
                 margin-top: 88px;
 
+                @media screen and(max-width: 425px) {
+                    margin-top: 45px;
+                }
+
                 &__description {
                     font-family: "Montserrat", sans-serif;
                     font-size: 22px;
@@ -95,8 +108,16 @@
                     text-transform: uppercase;
                     position: relative;
 
+                    @media screen and (max-width: 768px) {
+                        font-size: 18px;
+                    }
+
                     &:first-child {
                         padding-top: 60px;
+                            
+                        @media screen and (max-width: 425px) {
+                            padding-top: 50px;
+                        }
 
                         &:before {
                             content: url("~_img/crown.svg");
@@ -106,6 +127,10 @@
                             top: 0;
                             left: 50%;
                             transform: translateX(-50%);
+
+                            @media screen and (max-width: 425px) {
+                                width: 40px;
+                            }
                         }
                     }
                 }
@@ -114,6 +139,15 @@
                     font-size: 76px;
                     padding: 0 15px;
                     margin: 14px auto;
+
+                    @media screen and (max-width: 768px) {
+                        font-size: 55px;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        font-size: 30px;
+                        margin: 10px auto;
+                    }
 
                     &:after {
                         @include underline;

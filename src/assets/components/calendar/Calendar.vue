@@ -119,6 +119,11 @@
 
         @media screen and (max-width: 992px) {
             width: initial;
+            padding-top: 50px;
+        }
+
+        @media screen and (max-width: 425px) {
+            margin: 80px auto 0;
         }
 
         > h4 {
@@ -134,12 +139,22 @@
             @media screen and (max-width: 992px) {
                 flex-direction: column-reverse;
                 align-items: center;
+                margin-top: 50px;
             }
 
             .details {
                 font-family: "Heebo";
                 width: 50%;
                 margin-left: 100px;
+
+                @media screen and (max-width: 992px) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    margin-left: 0;
+                }
 
                 &__check-in, &__check-out {
                     display: flex;
@@ -158,7 +173,17 @@
                 }
 
                 &__check-out {
-                    padding-top: 50px;
+                    margin-top: 50px;
+
+                    @media screen and (max-width: 992px) {
+                        margin-top: 20px;
+                    }
+                }
+
+                &__check-in {
+                    @media screen and (max-width: 992px) {
+                        margin-top: 20px;
+                    }
                 }
 
                 &__button {
@@ -177,6 +202,10 @@
                     transition: all .4s ease;
                     margin-top: 50px;
 
+                    @media screen and (max-width: 992px) {
+                        margin-top: 20px;
+                    }
+
                     &:hover {
                         background-color: #f98100;
                         color: #fff;
@@ -186,6 +215,10 @@
 
             &__range {
                 width: 50%;
+
+                @media screen and (max-width: 992px) {
+                    width: initial;
+                }
             }
         }
     }

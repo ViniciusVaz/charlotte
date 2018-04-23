@@ -95,6 +95,12 @@
             margin: 0 15px 40px 75px;
         }
 
+        @media screen and (max-width: 768px) {
+            margin: 0;
+            margin-bottom: 40px;
+            padding: 0 15px;
+        }
+
         &__image {
             position: absolute;
             left: -60px;
@@ -106,6 +112,12 @@
                 height: 150px;
             }
 
+            @media screen and (max-width: 768px) {
+                left: 50%;
+                top: 15px;
+                transform: translateX(-50%);
+            }
+
             > img {
                 border-radius: 5px;
             }
@@ -113,12 +125,19 @@
 
         &__info {
             display: flex;
+            width: 100%;
             max-height: 238px;
             margin-left: 208px;
 
             @media screen and (max-width: 992px) {
                 max-height: initial;
                 margin-left: 108px;
+                flex-direction: column;
+            }
+
+            @media screen and (max-width: 768px) {
+                margin-left: 0;
+                padding-top: 180px;
             }
 
             &__details {
@@ -126,8 +145,20 @@
                 text-align: left;
                 padding-right: 25px;
 
+                @media screen and (max-width: 992px) {
+                    text-align: center;
+                }
+
+                @media screen and (max-width: 768px) {
+                    padding-right: 0;
+                }
+
                 &__rate {
                     display: flex;
+
+                    @media screen and (max-width: 992px) {
+                        justify-content: center;
+                    }
 
                     > img {
                         width: 20px;
@@ -142,6 +173,11 @@
                     color: #f98100;
                     padding-top: 18px;
                     padding-bottom: 25px;
+
+                    @media screen and (max-width: 768px) {
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                    }
                 }
 
                 &__description {
@@ -154,6 +190,11 @@
                     align-items: center;
                     justify-content: flex-start;    
                     padding-top: 25px;
+
+
+                    @media screen and (max-width: 992px) {
+                        justify-content: center;
+                    }
 
                     &__item {
                         border-radius: 20px;
@@ -198,7 +239,14 @@
                 font-family: "Montserrat";
 
                 @media screen and (max-width: 992px) {
-                    padding-right: 10px;
+                    align-items: center;
+                    flex-direction: row;
+                    padding: 10px 10px 0 10px;
+                    border: none;
+                }
+
+                @media screen and (max-width: 425px) {
+                    flex-direction: column;
                 }
 
                 &__nights {
@@ -216,13 +264,27 @@
                     font-weight: 600;
                     color: #79bd1a;
                     margin-top: 18px;
+
+                    @media screen and (max-width: 992px) {
+                        margin-top: 0;
+                        margin-right: 50px;
+                        margin-left: 10px;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        margin: 0;
+                    }
                 }
 
                 &__per-night {
                     font-size: 14px;
                     font-weight: 300;
                     color: #b2b0c0;
-                    margin-top: 25px
+                    margin-top: 25px;
+
+                    @media screen and (max-width: 992px) {
+                        margin-top: 0;
+                    }
                 }
 
                 &__price-night {
@@ -230,6 +292,15 @@
                     font-weight: 600;
                     color: #f98100;
                     margin-top: 10px;
+
+                    @media screen and (max-width: 992px) {
+                        margin-top: 0;
+                        margin-left: 10px;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        margin: 0;
+                    }
                 }
             }
 

@@ -53,6 +53,7 @@
         margin: 0 auto;
         max-width: 1180px; 
         position: relative;
+        padding: 0 50px;
 
         @media screen and (max-width: 1200px) {
             width: 992px;
@@ -62,8 +63,13 @@
             width: 100%;
         }
 
+        @media screen and (max-width: 768px) {
+            padding: 0 15px;
+        }
+
         &__title {
             font-size: 22px;
+            text-align: center;
             margin-top: 52px;
         }
 
@@ -80,7 +86,7 @@
                     display: none;
 
                     > p {
-                        font-size: 20px;
+                        font-size: 18px;
                         padding-left: 8px;
                         text-transform: uppercase;
                     }
@@ -88,11 +94,11 @@
                     @media screen and (max-width: 1200px) {
                         display: flex;
                         align-items: center;
-                        width: 35px;
+                        width: 20px;
                         height: 13px;
                         position: absolute;
                         top: 22px;
-                        left: 80px;
+                        left: 15px;
                     }
                 }
             }
