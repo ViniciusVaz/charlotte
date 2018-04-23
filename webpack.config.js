@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin")
     , vueConf = require("./config/vue-loader.config")
     , path = require("path")
+    , DashboardPlugin = require("webpack-dashboard/plugin")
 
 module.exports = {
     output: {
@@ -48,6 +49,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html",
             filename: "./index.html"
-        })
+        }),
+        new DashboardPlugin()
     ]
 }
