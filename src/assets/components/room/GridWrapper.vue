@@ -1,5 +1,5 @@
 <template>
-    <div class="grid-wrapper" v-if="rooms.rooms">
+    <div class="grid-wrapper" id="rooms" v-if="rooms.rooms">
         <h3 class="grid-wrapper__title">Best choices between {{filters.startDate}} and {{filters.endDate}}</h3>
         <div class="grid-wrapper__content">
             <div class="grid-wrapper__content__filter">

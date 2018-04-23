@@ -98,7 +98,11 @@
         methods: {
             searchRooms() {
                 if(this.date !== null) {
-                    this.getRooms()
+                    this.getRooms().then(response => {
+                        if(!response.data.error) {
+                            document.getElementById('rooms').scrollIntoView({block: 'start', behavior: 'smooth'});
+                        }
+                    })
                 }
             },
             ...mapActions([

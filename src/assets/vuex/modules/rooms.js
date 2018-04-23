@@ -12,9 +12,11 @@ export default {
     },
     actions: {
         getRooms ({ commit }, data) {
-            service.getRooms(data).then((response) => {
-                if(!response.data.error)
+            return service.getRooms(data).then((response) => {
+                if(!response.data.error) {
                     commit("SET_ROOMS", response.data.data)
+                }
+                return response
             })
         }
     }
