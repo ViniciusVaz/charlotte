@@ -126,7 +126,6 @@
         &__info {
             display: flex;
             width: 100%;
-            max-height: 238px;
             margin-left: 208px;
 
             @media screen and (max-width: 992px) {
