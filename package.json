@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run server:dev",
-    "server:dev": "webpack-dashboard -- webpack-dev-server --inline --hot",
+    "server:dev": "webpack-dashboard -- webpack-dev-server --inline --hot --config webpack.config.js",
     "dev": "webpack-dev-server --mode development",
     "production": "webpack --mode production",
     "heroku-postbuild": "npm run production"
