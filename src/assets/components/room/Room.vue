@@ -315,6 +315,11 @@
                 margin-left: 108px;
             }
 
+            @media screen and (max-width: 768px) {
+                max-height: initial;
+                margin-left: 0;
+            }
+
             &__graphic {
                 position: relative;
 
@@ -328,6 +333,10 @@
                 align-items: center;
                 justify-content: space-between;
                 margin-bottom: 40px;
+
+                @media screen and (max-width: 992px) {
+                    padding-top: 180px;
+                }
 
                 &__title {
                     font-size: 14px;
@@ -350,6 +359,10 @@
 
                     > p {
                         padding-left: 20px;
+
+                        @media screen and (max-width: 768px) {
+                            padding-left: 5px;
+                        }
                     }
                 }
             }
