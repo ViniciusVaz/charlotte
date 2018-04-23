@@ -53,18 +53,14 @@
         margin: 0 auto;
         max-width: 1180px; 
         position: relative;
-        padding: 0 50px;
 
         @media screen and (max-width: 1200px) {
             width: 992px;
+            padding: 0 15px;
         }
 
         @media screen and (max-width: 992px) {
             width: 100%;
-        }
-
-        @media screen and (max-width: 768px) {
-            padding: 0 15px;
         }
 
         &__title {
