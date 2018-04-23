@@ -18,8 +18,8 @@
                 </div>
             </div>
             <div class="room__info__value">
-                <p class="room__info__value__nights">Total <span>8 nights</span></p>
-                <span class="room__info__value__price-total">${{ room.price }}</span>
+                <p class="room__info__value__nights">Total <span>{{ filters.totalNights }} nights</span></p>
+                <span class="room__info__value__price-total">${{ totalPrice }}</span>
                 <span class="room__info__value__per-night">Per night</span>
                 <span class="room__info__value__price-night">${{ room.price }}</span>
             </div>
@@ -45,7 +45,7 @@
     export default {
         data() {
             return {
-                showInfo: true,
+                showInfo: true
             }
         },
         props: {
@@ -56,8 +56,12 @@
         },
         computed: {
             ...mapState ([
-                "app"
+                "app",
+                "filters"
             ]),
+            totalPrice() {
+                return this.$store.getters.totalNights * this.room.price
+            },
             dataCollection() {
                 const chart = {
                     labels: [],

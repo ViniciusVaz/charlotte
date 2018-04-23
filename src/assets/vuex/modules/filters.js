@@ -5,11 +5,16 @@ export default {
         stars: "",
         priceRange: [],
         startDate: "",
-        endDate: ""
+        endDate: "",
+        totalNights: 1
+    },
+    getters: {
+        totalNights: state => {
+            return state.totalNights
+        }
     },
     mutations: {
         [SET_FILTER] (state, data) {
-            const dataLabel = data.label
             Object.keys(state).map((key, index) => { if(key === data.label) state[key] = data.value })
         }
     },

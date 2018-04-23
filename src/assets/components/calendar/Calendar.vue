@@ -96,6 +96,10 @@
 			}
         },
         methods: {
+            ...mapActions([
+                'getRooms',
+                'setFilter'
+            ]),
             searchRooms() {
                 if(this.date !== null) {
                     this.getRooms().then(response => {
@@ -103,12 +107,25 @@
                             document.getElementById('rooms').scrollIntoView({block: 'start', behavior: 'smooth'});
                         }
                     })
+
+                    const data = {
+                        label: "totalNights",
+                        value: this.totalNights()
+                    }
+
+                    this.setFilter(data)
                 }
             },
-            ...mapActions([
-                'getRooms',
-                'setFilter'
-            ])
+            totalNights() {
+                let startDate = moment(this.date.start).format('L')
+                    , endDate = moment(this.date.end).format('L')
+                
+                startDate = moment(startDate);
+                endDate   = moment(endDate);
+                const totalNights = endDate.from(startDate, true).split(" ")[0]
+                
+                return totalNights !== "a" ? totalNights : 1
+            }
         }
     }
 </script>
